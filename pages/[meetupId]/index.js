@@ -3,7 +3,6 @@ import { Fragment } from "react";
 import Head from "next/head";
 
 import MeetupDetail from "../../components/meetups/MeetupDetail";
-import NewMeetupForm from "../../components/meetups/NewMeetupForm";
 
 function MeetupDetails(props) {
   return (
@@ -39,19 +38,6 @@ export async function getStaticPaths() {
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
-
-    /*[
-      {
-        params: {
-          meetupId: "m1",
-        },
-      },
-      {
-        params: {
-          meetupId: "m2",
-        },
-      },
-    ],*/
   };
 }
 

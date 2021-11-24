@@ -35,7 +35,7 @@ export async function getStaticPaths() {
   client.close();
 
   return {
-    fallback: false, //jak false- wskazane że zdefiniowane są wszystkie obsługiwane parametry, jak true- serwer będzie próbował dynamicznie generować, nawet jak nie ma w paths
+    fallback: "blocking", //jak false- wskazane że zdefiniowane są wszystkie obsługiwane parametry, jak true- serwer będzie próbował dynamicznie generować, nawet jak nie ma w paths
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
